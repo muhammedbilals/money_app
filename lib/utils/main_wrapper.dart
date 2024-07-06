@@ -30,9 +30,6 @@ class _MainWrapperState extends State<MainWrapper> {
   final List<Widget> pages = [
     const HomePage(),
     const CalculatorPage(),
-    
-
-    
   ];
   void onPageChanged(int page) {
     context.read<BottomNavCubit>().changeSelectedIndex(page);
@@ -65,15 +62,15 @@ class _MainWrapperState extends State<MainWrapper> {
           currentIndex: context.watch<BottomNavCubit>().state,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              activeIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
+              activeIcon: Icon(Icons.calculate),
+              icon: Icon(Icons.calculate_outlined),
               label: 'Calculator',
             ),
-            
-            
           ]),
     );
   }

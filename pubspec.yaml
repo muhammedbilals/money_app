@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_bloc: ^8.1.6
   sizer: ^2.0.15
+  intl: ^0.18.0
+  page_transition: ^2.1.0
+  fluttertoast: ^8.2.6
 
 dev_dependencies:
   flutter_test:
