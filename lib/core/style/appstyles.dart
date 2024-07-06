@@ -14,9 +14,14 @@ class AppStyles {
     fontWeight: medium,
   );
 
-  static TextStyle black18regular = TextStyle(
+  static TextStyle black16regular = TextStyle(
     fontSize: 16,
-    color: AppColors.black,
+    color: AppColors.black.withOpacity(0.5),
+    fontWeight: regular,
+  );
+   static TextStyle black14regular = TextStyle(
+    fontSize: 12,
+    color: AppColors.red,
     fontWeight: regular,
   );
 }

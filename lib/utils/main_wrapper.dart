@@ -4,6 +4,7 @@ import 'package:money_app/core/colors/appcolors.dart';
 import 'package:money_app/presentation/cubits/bottom_nav_cubit/bottom_nav_cubit.dart';
 import 'package:money_app/presentation/pages/calculator.dart';
 import 'package:money_app/presentation/pages/homepage.dart';
+import 'package:money_app/presentation/pages/people_page.dart';
 
 class MainWrapper extends StatefulWidget {
   const MainWrapper({super.key});
@@ -30,6 +31,7 @@ class _MainWrapperState extends State<MainWrapper> {
   final List<Widget> pages = [
     const HomePage(),
     const CalculatorPage(),
+    const PeoplePage()
   ];
   void onPageChanged(int page) {
     context.read<BottomNavCubit>().changeSelectedIndex(page);
@@ -42,6 +44,10 @@ class _MainWrapperState extends State<MainWrapper> {
         controller: pageController,
         children: pages,
         onPageChanged: (value) => onPageChanged(value),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {},
       ),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: AppColors.white,
@@ -70,6 +76,11 @@ class _MainWrapperState extends State<MainWrapper> {
               activeIcon: Icon(Icons.calculate),
               icon: Icon(Icons.calculate_outlined),
               label: 'Calculator',
+            ),
+            BottomNavigationBarItem(
+              activeIcon: Icon(Icons.people),
+              icon: Icon(Icons.people_outlined),
+              label: 'Peoples',
             ),
           ]),
     );
